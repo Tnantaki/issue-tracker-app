@@ -12,7 +12,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex space-x-5 border-b-1 p-3 items-center">
+    <nav className="flex space-x-5 border-b-1 p-3 items-center bg-zinc-800">
       <Link href="/">
         <FaBug />
       </Link>
