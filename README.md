@@ -17,3 +17,4 @@
 [x] Organize Import statement
 [x] Add Edit Issue button
 [x] Apply Single Reponsibility Principle to Issue Detail page
+[] Build Edit Issue Page
