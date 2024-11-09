@@ -9,3 +9,4 @@
 [x] Display Error messages
 [x] Build Spinner component
 [x] Create Table for display issues
+[x] Build Issued status component
