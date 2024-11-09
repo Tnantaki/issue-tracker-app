@@ -11,3 +11,4 @@
 [x] Create Table for display issues
 [x] Build Issued status component
 [x] Build Issue Table Skeleton component
+[x] Create Issue Detail Page
