@@ -6,3 +6,4 @@
 [x] Create NewIssuePage
 [x] Customize Redix-UI Theme & Font
 [x] Handle Issue Form submit
+[] Display Error messages
