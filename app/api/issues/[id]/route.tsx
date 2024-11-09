@@ -2,11 +2,11 @@ import { issueSchema } from "@/app/schemas/issueSchema";
 import prisma from "@/prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
-interface Props {
-  params: { id: string };
+interface Params {
+  params: Promise<{ id: string }>;
 }
 
-export async function PATCH(request: NextRequest, { params }: Props) {
+export async function PATCH(request: NextRequest, { params }: Params) {
   const id = parseInt((await params).id)
   const body = await request.json()
 

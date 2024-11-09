@@ -19,3 +19,4 @@
 [x] Apply Single Reponsibility Principle to Issue Detail page
 [x] Build Edit Issue Page
 [x] Create API for update Issue
+[] Update Issue Form: Apply update API
