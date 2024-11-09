@@ -12,3 +12,4 @@
 [x] Build Issued status component
 [x] Build Issue Table Skeleton component
 [x] Create Issue Detail Page
+[x] Build Link component
