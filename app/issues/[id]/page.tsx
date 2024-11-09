@@ -1,15 +1,14 @@
-import { IssueStatusBadge } from '@/app/components';
 import prisma from '@/prisma/client';
-import { Pencil2Icon } from '@radix-ui/react-icons';
-import { Box, Button, Card, Flex, Grid, Heading, Text } from '@radix-ui/themes';
-import Link from 'next/link';
+import { Box, Grid } from '@radix-ui/themes';
 import { notFound } from 'next/navigation';
+import IssueDetailPage from './IssueDetailPage';
+import IssueEditButton from './IssueEditButton';
 
 interface Props {
   params: Promise<{id: string}>
 }
 
-const IssueDetailPage = async ({ params }: Props) => {
+const IssueLayoutPage = async ({ params }: Props) => {
   const id = parseInt((await params).id)
   if (isNaN(id)) return notFound()
 
@@ -19,23 +18,13 @@ const IssueDetailPage = async ({ params }: Props) => {
   return (
     <Grid columns={{ initial: "1", sm: "2" }} gap="3">
       <Box>
-        <Heading>{issue.title}</Heading>
-        <Flex gap="3" my="3" align="center">
-          <Text>{issue.createdAt.toDateString()}</Text>
-          <IssueStatusBadge status={issue.status} />
-        </Flex>
-        <Card>
-          <Text>{issue.description}</Text>
-        </Card>
+        <IssueDetailPage issue={issue} />
       </Box>
       <Box>
-        <Button>
-          <Pencil2Icon />
-          <Link href={`/issues/${id}`}>Edit Issue</Link>
-        </Button>
+        <IssueEditButton issueId={issue.id} />
       </Box>
     </Grid>
   );
 };
 
-export default IssueDetailPage
+export default IssueLayoutPage

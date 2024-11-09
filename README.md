@@ -15,3 +15,5 @@
 [x] Build Link component
 [x] Apply loading page to NewIssue page & IssueDetail page
 [x] Organize Import statement
+[x] Add Edit Issue button
+[x] Apply Single Reponsibility Principle to Issue Detail page
