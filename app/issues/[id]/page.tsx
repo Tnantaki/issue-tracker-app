@@ -16,14 +16,14 @@ const IssueDetailPage = async ({ params }: Props) => {
   if (!issue) return notFound()
 
   return (
-    <div>
+    <div className='max-w-5xl'>
       <Heading>{issue.title}</Heading>
       <Flex gap="3" my="3" align='center'>
-        <Text>{issue.description}</Text>
+        <Text>{issue.createdAt.toDateString()}</Text>
         <IssueStatusBadge status={issue.status} />
       </Flex>
       <Card>
-        <Text>{issue.createdAt.toDateString()}</Text>
+        <Text>{issue.description}</Text>
       </Card>
     </div>
   );

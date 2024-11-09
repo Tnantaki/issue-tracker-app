@@ -13,3 +13,4 @@
 [x] Build Issue Table Skeleton component
 [x] Create Issue Detail Page
 [x] Build Link component
+[x] Apply loading page to NewIssue page & IssueDetail page
