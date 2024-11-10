@@ -26,3 +26,4 @@
 [x] Setting Google OAuth & Add Prisma User models
 [x] Add Login & Logout Link
 [x] Change the Layout of the navbar
+[x] Create drop-down menu to show the current user
