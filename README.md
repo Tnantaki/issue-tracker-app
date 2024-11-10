@@ -25,3 +25,4 @@
 [x] Create API delete Issue & apply to delete button
 [x] Setting Google OAuth & Add Prisma User models
 [x] Add Login & Logout Link
+[x] Change the Layout of the navbar
