@@ -24,3 +24,4 @@
 [x] Add show confirmation dialog
 [x] Create API delete Issue & apply to delete button
 [x] Setting Google OAuth & Add Prisma User models
+[x] Add Login & Logout Link
