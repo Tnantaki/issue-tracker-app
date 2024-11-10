@@ -30,3 +30,4 @@
 [x] Reactor the navbar
 [x] Secure Application
 [] Secure API route
+[x] Build AssignSelect component

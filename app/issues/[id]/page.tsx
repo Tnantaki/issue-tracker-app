@@ -5,6 +5,7 @@ import IssueDetailPage from './IssueDetailPage';
 import IssueEditButton from './IssueEditButton';
 import IssueDeleteButton from './IssueDeleteButton';
 import { auth } from '@/auth';
+import AssignSelect from './AssignSelect';
 
 interface Props {
   params: Promise<{id: string}>
@@ -26,6 +27,7 @@ const IssueLayoutPage = async ({ params }: Props) => {
       </Box>
       { session && <Box>
         <Flex direction="column" gap="4">
+          <AssignSelect />
           <IssueEditButton issueId={issue.id} />
           <IssueDeleteButton issueId={issue.id} />
         </Flex>
