@@ -5,6 +5,7 @@ import { Container, Theme } from "@radix-ui/themes";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavBar from "./NavBar";
+import QueryProvider from "./_components/QueryProvider";
 
 const inter = Inter({
   weight: ['400'],
@@ -25,18 +26,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <Theme
-          appearance="dark"
-          accentColor="green"
-          grayColor="sand"
-          radius="small"
-          scaling="105%"
-        >
-          <NavBar />
-          <main className="p-5">
-            <Container>{children}</Container>
-          </main>
-        </Theme>
+        <QueryProvider>
+          <Theme
+            appearance="dark"
+            accentColor="green"
+            grayColor="sand"
+            radius="small"
+            scaling="105%"
+          >
+            <NavBar />
+            <main className="p-5">
+              <Container>{children}</Container>
+            </main>
+          </Theme>
+        </QueryProvider>
       </body>
     </html>
   );
