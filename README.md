@@ -28,3 +28,4 @@
 [x] Change the Layout of the navbar
 [x] Create drop-down menu to show the current user
 [x] Reactor the navbar
+[] Secure Application & API route
