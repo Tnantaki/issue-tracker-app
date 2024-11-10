@@ -21,3 +21,4 @@
 [x] Create API for update Issue
 [x] Update Issue Form: Apply update API
 [x] Add Delete button
+[x] Add show confirmation dialog
