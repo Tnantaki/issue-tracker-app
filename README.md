@@ -3,6 +3,9 @@
 ## 📖 Description
 > This Project is create Issue Tracker website. The project have dashboard page for display information of Issues data and Issue page that list all issue. User can login with Goolge account to create and edit new issue.
 
+## 🌐 Visit Website
+URL: https://issue-tracker-app-tnantakis-projects.vercel.app/
+
 ## Previews
 | ![.](images/dashboard.png) <br> <center>**Dashboard Page**</center> | ![.](images/issue_list.png) <br> <center>**Issues Page**</center> |
 | :-: | :-: |
@@ -10,7 +13,7 @@
 ## 🧰 Built with
 [![Tools](https://skillicons.dev/icons?i=nextjs,ts,postgres)](https://skillicons.dev)
 
-## 📝Usage
+## 📝 Usage
 ### Requirement
 This project use `Node.js` with `TypsScript` to compile source code
 
@@ -31,10 +34,10 @@ npm run build
 npm start
 ```
 
-## 📋Reference
+## 📋 Reference
 This project is build by learning from the Next.js Projects: Build an Issue Tracker course by Mosh Hamedani. You can find the full course at: https://codewithmosh.com
 
-## 📈Progress
+## 📈 Progress
 - [x] Create NavBar Component & adjust Layout page
 - [x] Style Active navbar
 - [x] Install Prisma & Create Issue model
@@ -65,7 +68,7 @@ This project is build by learning from the Next.js Projects: Build an Issue Trac
 - [x] Create drop-down menu to show the current user
 - [x] Reactor the navbar
 - [x] Secure Application
-- [] Secure API route
+- [ ] Secure API route
 - [x] Build AssignSelect component
 - [x] Create User API & Populate AssignSelect component
 - [x] Fetch Users data with React Query
