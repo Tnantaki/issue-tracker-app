@@ -1,9 +1,9 @@
 import { Skeleton } from "@/app/components";
-import { Table } from '@radix-ui/themes';
-import IssueActions from './IssueActions';
+import { Table } from "@radix-ui/themes";
+import IssueActions from "./_components/IssueActions";
 
 const LoadingPge = () => {
-  const issues = [1, 2, 3, 4, 5]
+  const issues = [1, 2, 3, 4, 5];
 
   return (
     <div>
@@ -41,6 +41,6 @@ const LoadingPge = () => {
       </Table.Root>
     </div>
   );
-}
+};
 
-export default LoadingPge
+export default LoadingPge;

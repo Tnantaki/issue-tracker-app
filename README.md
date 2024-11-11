@@ -36,3 +36,4 @@
 [x] Update Issue schema & API patch Issue
 [x] Apply patch Issue to AssignSelection
 [x] Show toast notification
+[x] Build the status filter component
