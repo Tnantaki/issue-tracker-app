@@ -1,4 +1,40 @@
-## Progress
+<h1 align="center">Issue Tracker</h1>
+
+## 📖 Description
+> This Project is create Issue Tracker website. The project have dashboard page for display information of Issues data and Issue page that list all issue. User can login with Goolge account to create and edit new issue.
+
+## Previews
+| ![.](images/dashboard.png) <br> <center>**Dashboard Page**</center> | ![.](images/issue_list.png) <br> <center>**Issues Page**</center> |
+| :-: | :-: |
+
+## 🧰 Built with
+[![Tools](https://skillicons.dev/icons?i=nextjs,ts,postgres)](https://skillicons.dev)
+
+## 📝Usage
+### Requirement
+This project use `Node.js` with `TypsScript` to compile source code
+
+1. Create `.env` file by provide the variable as `.env.example`.
+
+2. Install dependency modules.
+```shell
+npm i
+```
+
+3. Build files
+```shell
+npm run build
+```
+
+### Running Server
+```shell
+npm start
+```
+
+## 📋Reference
+This project is build by learning from the Next.js Projects: Build an Issue Tracker course by Mosh Hamedani. You can find the full course at: https://codewithmosh.com
+
+## 📈Progress
 [x] Create NavBar Component & adjust Layout page
 [x] Style Active navbar
 [x] Install Prisma & Create Issue model
@@ -45,4 +81,4 @@
 [x] Build the Issue Chart component
 [x] Layout dashboard page
 [x] Add metadata of each page
-[] Optimize performance using react cache
+[x] Optimize performance using react cache
