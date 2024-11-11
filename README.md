@@ -43,3 +43,4 @@
 [x] Build the latest Issue component
 [x] Build The Issue Summary component
 [x] Build the Issue Chart component
+[x] Layout dashboard page

@@ -1,5 +1,5 @@
 import { Status } from '@prisma/client'
-import { Card, Flex, Text } from '@radix-ui/themes'
+import { Box, Card, Flex, Text } from '@radix-ui/themes'
 import Link from 'next/link'
 import React from 'react'
 
@@ -17,17 +17,26 @@ const IssueSummary = ({open, inProgress, closed}: Props) => {
   ]
 
   return (
-    <Flex gap='3'>
-      {container.map(item => (
-        <Card key={item.label}>
-          <Flex direction='column' gap='1'>
-            <Link href={`/issues?status=${item.status}`} className='text-sm font-medium'>{item.label}</Link>
-            <Text size='6' align='center' className='font-bold'>{item.value}</Text>
-          </Flex>
-        </Card>
-      ))}      
+    <Flex gap="3">
+      {container.map((item) => (
+        <Box key={item.label} flexGrow="1">
+          <Card>
+            <Flex direction="column" gap="1">
+              <Link
+                href={`/issues?status=${item.status}`}
+                className="text-sm font-medium text-center"
+              >
+                {item.label}
+              </Link>
+              <Text size="6" align="center" className="font-bold">
+                {item.value}
+              </Text>
+            </Flex>
+          </Card>
+        </Box>
+      ))}
     </Flex>
-  )
+  );
 }
 
 export default IssueSummary
