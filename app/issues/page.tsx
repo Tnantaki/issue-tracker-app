@@ -19,9 +19,14 @@ interface Props {
 const IssuesPage = async ({ searchParams }: Props) => {
   const statuses = Object.values(Status)
   const { status, orderBy } = await searchParams
+
   const filterStatus = statuses.includes(status) ? status : undefined
+  const sortColumn = columns.map((c) => c.value).includes(orderBy)
+    ? { [orderBy]: "asc" }
+    : undefined;
   const issues = await prisma.issue.findMany({
     where: { status: filterStatus },
+    orderBy: sortColumn,
   });
 
   return (
