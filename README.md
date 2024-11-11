@@ -37,3 +37,4 @@
 [x] Apply patch Issue to AssignSelection
 [x] Show toast notification
 [x] Build the status filter component
+[x] Apply Filter Issue
