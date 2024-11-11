@@ -5,6 +5,7 @@ import { TriangleUpIcon } from "@radix-ui/react-icons";
 import { Table } from "@radix-ui/themes";
 import NextLink from 'next/link';
 import IssueActions from "./_components/IssueActions";
+import Pagination from "../components/Pagination";
 
 const columns: {label: string, value: keyof Issue, className?: string}[] = [
   {label: 'Issue', value: 'title'},
@@ -13,21 +14,30 @@ const columns: {label: string, value: keyof Issue, className?: string}[] = [
 ]
 
 interface Props {
-  searchParams: Promise<{ status: Status, orderBy: keyof Issue }>;
+  searchParams: Promise<{ status: Status, orderBy: keyof Issue, page: string }>;
 }
 
 const IssuesPage = async ({ searchParams }: Props) => {
   const statuses = Object.values(Status)
-  const { status, orderBy } = await searchParams
+  const { status, orderBy, page } = await searchParams
 
   const filterStatus = statuses.includes(status) ? status : undefined
+
   const sortColumn = columns.map((c) => c.value).includes(orderBy)
     ? { [orderBy]: "asc" }
     : undefined;
+
+  const currentPage = page ? parseInt(page) : 1
+  const pageSize = 10
+
   const issues = await prisma.issue.findMany({
     where: { status: filterStatus },
     orderBy: sortColumn,
+    skip: (currentPage - 1) * pageSize,
+    take: pageSize
   });
+
+  const totalIssue = await prisma.issue.count({where: {status: filterStatus}})
 
   return (
     <div>
@@ -37,7 +47,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
           <Table.Row>
             {columns.map((c) => (
               <Table.ColumnHeaderCell key={c.value} className={c.className}>
-                <NextLink href={{query: {status, orderBy: c.value}}}>
+                <NextLink href={{ query: { status, orderBy: c.value } }}>
                   {c.label}
                   {c.value === orderBy && <TriangleUpIcon className="inline" />}
                 </NextLink>
@@ -64,6 +74,11 @@ const IssuesPage = async ({ searchParams }: Props) => {
           ))}
         </Table.Body>
       </Table.Root>
+    <Pagination
+      currentPage={currentPage}
+      pageSize={pageSize}
+      itemCount={totalIssue}
+    />
     </div>
   );
 };

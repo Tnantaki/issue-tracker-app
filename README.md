@@ -39,3 +39,4 @@
 [x] Build the status filter component
 [x] Apply Filter Issue
 [x] Make Issue column sortable
+[] Create Pagination component
