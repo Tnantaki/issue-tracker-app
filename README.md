@@ -45,3 +45,4 @@
 [x] Build the Issue Chart component
 [x] Layout dashboard page
 [x] Add metadata of each page
+[] Optimize performance using react cache
