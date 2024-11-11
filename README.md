@@ -32,4 +32,5 @@
 [] Secure API route
 [x] Build AssignSelect component
 [x] Create User API & Populate AssignSelect component
-[] Fetch Users data with React Query
+[x] Fetch Users data with React Query
+[x] Update Issue schema & API patch Issue
