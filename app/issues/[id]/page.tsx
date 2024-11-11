@@ -27,7 +27,7 @@ const IssueLayoutPage = async ({ params }: Props) => {
       </Box>
       { session && <Box>
         <Flex direction="column" gap="4">
-          <AssignSelect />
+          <AssignSelect issue={issue}/>
           <IssueEditButton issueId={issue.id} />
           <IssueDeleteButton issueId={issue.id} />
         </Flex>
