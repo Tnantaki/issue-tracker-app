@@ -6,6 +6,7 @@ import { Flex, Table } from "@radix-ui/themes";
 import NextLink from 'next/link';
 import IssueActions from "./_components/IssueActions";
 import Pagination from "../components/Pagination";
+import { Metadata } from "next";
 
 const columns: {label: string, value: keyof Issue, className?: string}[] = [
   {label: 'Issue', value: 'title'},
@@ -87,3 +88,8 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
 export const dynamic = "force-dynamic";
 export default IssuesPage;
+
+export const metadata: Metadata = {
+  title: "Issue Tracker - Issue",
+  description: "View all Issue",
+};

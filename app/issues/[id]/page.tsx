@@ -37,3 +37,13 @@ const IssueLayoutPage = async ({ params }: Props) => {
 };
 
 export default IssueLayoutPage
+
+export async function generateMetadata({ params }: Props) {
+  const id = parseInt((await params).id)
+
+  const issue = await prisma.issue.findUnique({ where: { id } });
+  return {
+    title: issue?.title,
+    description: 'Detail of issue ' + issue?.id
+  } 
+}
