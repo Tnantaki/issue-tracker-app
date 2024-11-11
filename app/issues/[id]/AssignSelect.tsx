@@ -3,6 +3,7 @@ import { Skeleton } from "@/app/components"
 import { Issue, User } from '@prisma/client'
 import { Select } from '@radix-ui/themes'
 import { useQuery } from '@tanstack/react-query'
+import toast, { Toaster } from "react-hot-toast";
 import axios from 'axios'
 
 const AssignSelect = ({issue}: {issue: Issue}) => {
@@ -18,12 +19,17 @@ const AssignSelect = ({issue}: {issue: Issue}) => {
   if (error) return null
 
   return (
+    <>
     <Select.Root
       defaultValue={issue.assignedToUserId || "unassigned"}
       onValueChange={(userId) => {
-        axios.patch(`/api/issues/${issue.id}`, {
-          assignedToUserId: userId === 'unassigned' ? null : userId,
-        });
+        axios
+          .patch(`/api/issues/${issue.id}`, {
+            assignedToUserId: userId === "unassigned" ? null : userId,
+          })
+          .catch(() => {
+            toast.error("Changes could not be saved.");
+          });
       }}
     >
       <Select.Trigger placeholder="Assign..." />
@@ -39,6 +45,8 @@ const AssignSelect = ({issue}: {issue: Issue}) => {
         </Select.Group>
       </Select.Content>
     </Select.Root>
+    <Toaster />
+    </>
   );
 }
 
