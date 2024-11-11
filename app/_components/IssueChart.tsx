@@ -15,7 +15,6 @@ const IssueChart = ({open, inProgress, closed}: Props) => {
     {label: 'In Progress', value: inProgress},
     {label: 'Closed', value: closed},
   ]
-  console.log(data)
 
   return (
     <Card>
